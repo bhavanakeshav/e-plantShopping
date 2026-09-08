@@ -1,49 +1,50 @@
+import React from "react";
+import {
+  HashRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
-import React, { useState } from 'react';
-import ProductList from './ProductList';
-import './App.css';
-import AboutUs from './AboutUs';
+import AboutUs from "./AboutUs";
+import ProductList from "./ProductList";
+import CartItem from "./CartItem";
+import "./App.css";
 
-function App() {
-  
-  const [showProductList, setShowProductList] = useState(false);
-
-  const handleGetStartedClick = () => {
-    setShowProductList(true);
-  };
-
-  const handleHomeClick = () => {
-    setShowProductList(false);
-  };
-
+function Home() {
   return (
-    <div className="app-container">
-      <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
-        <div className="background-image"></div>
-        <div className="content">
-         <div className="landing_content">
-         <h1>Welcome To Paradise Nursery</h1>
-          <div className="divider"></div>
-          <p>Where Green Meets Serenity</p>
-         
-          <button className="get-started-button" onClick={handleGetStartedClick}>
+    <div className="landing-page">
+      <div className="overlay">
+        <h1>Paradise Nursery</h1>
+
+        <AboutUs />
+
+        <Link to="/products">
+          <button className="get-started-btn">
             Get Started
           </button>
-         </div>
-          <div className="aboutus_container">
-          <AboutUs/>
-          </div>
-          </div>
-
-      </div>
-      <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
-        <ProductList onHomeClick={handleHomeClick}/>
+        </Link>
       </div>
     </div>
   );
 }
 
+function App() {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/products"
+          element={<ProductList />}
+        />
+        <Route
+          path="/cart"
+          element={<CartItem />}
+        />
+      </Routes>
+    </HashRouter>
+  );
+}
+
 export default App;
-
-
-
