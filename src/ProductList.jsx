@@ -3,6 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItem } from "./CartSlice";
 import "./App.css";
+import snakePlant from "./assets/snake-plant.jpg";
+import peaceLily from "./assets/peace-lily.jpg";
+import zzPlant from "./assets/zz-plant.jpg";
+import aloeVera from "./assets/aloe-vera.jpg";
+import monstera from "./assets/monstera.jpg";
+import birdOfParadise from "./assets/bird-of-paradise.jpg";
 
 const plantsArray = [
   {
@@ -11,8 +17,7 @@ const plantsArray = [
       {
         id: 1,
         name: "Snake Plant",
-        image:
-          "https://images.unsplash.com/photo-1593691509543-c55fb32e5cee",
+        image: snakePlant,
         description:
           "A hardy indoor plant known for improving air quality and requiring very little maintenance.",
         cost: "$15.00",
@@ -20,8 +25,7 @@ const plantsArray = [
       {
         id: 2,
         name: "Peace Lily",
-        image:
-          "https://images.unsplash.com/photo-1593482892290-f54927ae2b7e",
+        image: peaceLily,
         description:
           "A beautiful flowering plant that helps improve indoor air quality.",
         cost: "$20.00",
@@ -35,8 +39,7 @@ const plantsArray = [
       {
         id: 3,
         name: "ZZ Plant",
-        image:
-          "https://images.unsplash.com/photo-1614594575810-3b3b5c654172",
+        image: zzPlant,
         description:
           "A durable houseplant that grows well in low light and requires little care.",
         cost: "$18.00",
@@ -44,8 +47,7 @@ const plantsArray = [
       {
         id: 4,
         name: "Aloe Vera",
-        image:
-          "https://images.unsplash.com/photo-1509423350716-97f2360af8e4",
+        image: aloeVera,
         description:
           "A popular succulent that requires minimal watering and maintenance.",
         cost: "$14.00",
@@ -59,8 +61,7 @@ const plantsArray = [
       {
         id: 5,
         name: "Monstera",
-        image:
-          "https://images.unsplash.com/photo-1614594575810-3b3b5c654172",
+        image: monstera,
         description:
           "A tropical houseplant famous for its large and decorative split leaves.",
         cost: "$30.00",
@@ -68,8 +69,7 @@ const plantsArray = [
       {
         id: 6,
         name: "Bird of Paradise",
-        image:
-          "https://images.unsplash.com/photo-1593691509543-c55fb32e5cee",
+        image: birdOfParadise,
         description:
           "A striking tropical plant with large green leaves and a bold appearance.",
         cost: "$35.00",
