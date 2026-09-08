@@ -6,10 +6,10 @@ const initialState = {
 
 const cartSlice = createSlice({
   name: "cart",
+
   initialState,
 
   reducers: {
-    // Add item to cart
     addItem: (state, action) => {
       const { name, image, cost } = action.payload;
 
@@ -18,7 +18,7 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity++;
       } else {
         state.items.push({
           name,
@@ -29,14 +29,12 @@ const cartSlice = createSlice({
       }
     },
 
-    // Remove item completely from cart
     removeItem: (state, action) => {
       state.items = state.items.filter(
         (item) => item.name !== action.payload
       );
     },
 
-    // Update item quantity
     updateQuantity: (state, action) => {
       const { name, quantity } = action.payload;
 
@@ -51,12 +49,10 @@ const cartSlice = createSlice({
   },
 });
 
-// Export Redux actions
 export const {
   addItem,
   removeItem,
   updateQuantity,
 } = cartSlice.actions;
 
-// Export reducer
 export default cartSlice.reducer;
